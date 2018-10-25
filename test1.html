@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TEST1</title>
+
+
+<script type="text/javascript">
+    function getform() {
+	var i;     // 検索用添字
+
+	param1 = document.form1.Emp_ID.value;
+	param2 = document.form1.PJ_Cd.value;
+  param3 = document.form1.Billing_YYYY.value;
+  param4 = document.form1.EmpName_JK.value;
+  param5 = document.form1.PjName.value;
+	// 他ＵＲＬへのリンク （getform1 にこの部分を追加）
+	var url = "http://192.168.10.80/sales/test2.html";
+	var param = "?varEmpId="         + param1 +
+                "&varPjCd="        + param2 +
+                "&varBillingYYYY=" + param3 +
+                "&varEmpNameJK="   + param4 +
+                "&varPjName="      + param5 ;
+	location.href = url + param;
+
+    }
+</script>
+
+</head>
+<body>
+
+
+  <form name="form1">
+    <table>
+
+    <tr><td>社員番号</td><td>：</td><td><input type="text" name="Emp_ID" size="40"></td><tr>
+    <tr><td>氏名</td><td>：</td><td><input type="text" name="EmpName_JK" size="40"></td><tr>
+    <tr><td>プロジェクトコード</td><td>：</td><td><input type="text" name="PJ_Cd" size="40"></td><tr>
+    <tr><td>プロジェクト名</td><td>：</td><td><input type="text" name="PjName" size="40"></td><tr>
+    <tr><td>請求年</td><td>：</td><td><input type="text" name="Billing_YYYY" size="40"></td><tr>
+
+    </table>
+
+	   <p><input type="button" value="検索" onClick="getform()">　
+	   <input type="reset" value="リセット"></p>
+    </form>
+  </boby>
+  </html>
